@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">MyUBER</string>
     <string name="title_activity_maps">MyUber</string>
-    <string name="google_maps_key" translatable="false">AIzaSyDMOLT5PWfc8Uy2N-xdlAAJEnWPdoy_2qw</string>
+    <string name="google_maps_key" translatable="false">AIzaSyAHuaAvUxR62CyCpfMGA62ouzfjYYyofeY</string>
 </resources>

@@ -20,6 +20,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -81,7 +82,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                         car_uber.position(positionsUber.get(1));
 
                                         marker = mMap.addMarker(car_uber);
-                                    mMap.moveCamera(CameraUpdateFactory.newLatLng(positionsUber.get(1)));
+                                    //mMap.moveCamera(CameraUpdateFactory.newLatLng(positionsUber.get(1)));
 
 
                                     new Handler().postDelayed(new Runnable() {
@@ -90,7 +91,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                             marker.remove();
                                             car_uber.position(positionsUber.get(2));
                                             marker = mMap.addMarker(car_uber);
-                                            mMap.moveCamera(CameraUpdateFactory.newLatLng(positionsUber.get(2)));
+                                      //      mMap.moveCamera(CameraUpdateFactory.newLatLng(positionsUber.get(2)));
 
                                             new Handler().postDelayed(new Runnable() {
                                                 @Override
@@ -98,18 +99,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                                     marker.remove();
                                                     car_uber.position(positionsUber.get(3));
                                                     marker = mMap.addMarker(car_uber);
-                                                    mMap.moveCamera(CameraUpdateFactory.newLatLng(positionsUber.get(3)));
+                                        //            mMap.moveCamera(CameraUpdateFactory.newLatLng(positionsUber.get(3)));
 
 
                                                 }
-                                            }, 2000);
+                                            }, 1000);
 
 
                                         }
-                                    }, 2000);
+                                    }, 1000);
 
                                 }
-                            }, 2000);
+                            }, 1000);
 
 
 
@@ -125,6 +126,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        mMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(getApplicationContext(),R.raw.style_map));
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
